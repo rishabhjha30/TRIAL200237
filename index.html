@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="https://piyushkhandelia.github.io/Guest_House_Reservation_System/Images/bit_logo.png">
+        <link rel="stylesheet" href="https://piyushkhandelia.github.io/Guest_House_Reservation_System/css/homepage.css">
+        <link rel="stylesheet" href="https://piyushkhandelia.github.io/Guest_House_Reservation_System/css/booking.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Booking</title>
+    </head>
+    <body>
+        <!-- Rules section -->
+        <div id="rules_section" class="rules_section" style="display: block;">
+            <p>Please read the rules before proceeding:</p>
+            <ul>
+                <li>Rule 1: A maximum of 2 guests is allowed in 1 room.</li>
+                <li>Rule 2: You can book a room for not more than 3 days</li>
+                <li>Rule 3: You have to either Check-In or inform us for delay within 3 hours of Checking-In Time or your booking will be discarded. </li>
+                <!-- Add more rules as needed -->
+            </ul>
+            <p>Guest House Policies:- <a href="https://www.bitmesra.ac.in/UploadedDocuments/pratyush_869/files/Guest_House/guest_house_policy.pdf">Click here</a></p>
+            <button onclick="showBookingForm()" class="alert">Continue</button>
+        </div>
+        <!--Header-->
+        <div class="header_div">
+            <div class="left_div"></div>
+            <div class="right_div">
+                <div class="nav">
+                    <a href="https://piyushkhandelia.github.io/Guest_House_Reservation_System/Pages/booking.html"><button>Book Now</button></a>
+                    <a href="https://piyushkhandelia.github.io/Guest_House_Reservation_System/Pages/my_bookings.html"><button>My Bookings</button></a>
+                    <a href="https://piyushkhandelia.github.io/Guest_House_Reservation_System/Pages/login_signup.html"><button>Logout</button></a>
+                </div>
+            </div>
+        </div>
+        <!-- Booking form section -->
+        <div id="booking_form" class="booking_form" style="display: none;">
+            <p class="heading">Book Now</p>
+            <form id="bookingform">
+                <!--Form Fields-->
+                <label for="booking_idL">Booking ID:</label>
+                <input type="booking_id" id="booking_id" name="booking_id" readonly>
+
+                <label for="name" id="nameL">Name:<sup>*</sup></label><br>
+                <input type="text" id="name" name="name"><br>
+    
+                <label for="email" id="emailL">Email:<sup>*</sup></label><br>
+                <input type="email" id="email" name="email"><br>
+    
+                <label for="email" id="inst_emailL">Institute Email:</label><br>
+                <input type="email" id="inst_email" name="inst_email"><br>
+                
+                <label for="phone" id="phoneL">Phone:<sup>*</sup></label><br>
+                <input type="tel" id="phone" name="phone" placeholder="12345 67890"><br>
+                
+                <label for="phone" id="alt_phoneL">Alternate No.:</label><br>
+                <input type="tel" id="alt_phone" name="alt_phone" placeholder="12345 67890"><br>
+                
+                <label for="category" id="categoryL">Category:<sup>*</sup></label><br>
+                <select id="category" name="category">
+                    <option value="">You are:</option>
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Others">Others</option>
+                    <!-- Add more options as needed -->
+                </select><br>
+    
+                <!-- Add new columns for additional form fields -->
+                <label for="college_id" id="college_idL">College Unique ID No.:</label><br>
+                <input type="text" id="college_id" name="college_id"><br>
+                
+                <label for="id_proof" id="id_proofL">ID Proof:<sup>*</sup></label><br>
+                <select id="id_proof" name="id_proof">
+                    <option value="">Select ID Proof</option>
+                    <option value="Aadhar Card">Aadhar Card</option>
+                    <option value="Driving License">Driving License</option>
+                    <!-- Add more options as needed -->
+                </select><br>
+                
+                <label for="id_proof_number" id="id_proof_numberL">ID Proof No.:<sup>*</sup></label><br>
+                <input type="text" id="id_proof_number" name="id_proof_number"><br>
+                
+                <label for="gender" id="genderL">Gender:<sup>*</sup></label><br>
+                <select id="gender" name="gender">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Rather not to Say">Rather not to Say</option>
+                    <!-- Add more options as needed -->
+                </select><br>
+                
+                <label for="permanent_address_location" id="permanent_address_locationL">Permanent Address Location:<sup>*</sup></label><br>
+                <input type="text" id="permanent_address_location" name="permanent_address_location"><br>
+                    
+                <label for="permanent_address_pin" id="permanent_address_pinL">PIN Code:<sup>*</sup></label><br>
+                <input type="text" id="permanent_address_pin" name="permanent_address_pin"><br>
+    
+                <label for="permanent_address_state" id="permanent_address_stateL">State:<sup>*</sup></label><br>
+                <input type="text" id="permanent_address_state" name="permanent_address_state"><br>
+                
+                <label for="permanent_address_area" id="permanent_address_areaL">Area:<sup>*</sup></label><br>
+                <input type="text" id="permanent_address_area" name="permanent_address_area"><br>
+                
+                <label for="text" id="guest_house_selection">Select<sup>*</sup></label>
+                <select id="guest_house" name="guest_house">
+                    <option value="">Guest House</option>
+                    <option value="igh">IGH</option>
+                    <option value="ogh">OGH</option>
+                </select>
+                
+                <label for="room_type" id="room_typeL">Room Type:<sup>*</sup></label>
+                <select id="room_type" name="room_type">
+                    
+                </select>
+
+                <label for="occupacy" id="occupacyL">Occupacy:<sup>*</sup></label>
+                <select id="occupacy" name="occupacy">
+                    <option value="double">Double</option>  
+                    <option value="single">Single</option>
+                </select>
+                
+                <label for="date" id="datefL">Date (From):<sup>*</sup></label><br>
+                <input type="datetime-local" id="dateF" name="date"><br>
+
+                <label for="date" id="datetL">Date (To):<sup>*</sup></label><br>
+                <input type="datetime-local" id="dateTo" name="date"><br>
+
+                <label for="duration" id="durationL">Duration (Days):</label><br>
+                <input type="text" id="duration" name="duration" readonly><br>
+
+                <label for="curr_date">Current Date and Time:</label>
+                <input type="datetime-local" id="curr_date" name="curr_date" readonly>
+                
+                <label for="room_type" id="captchaL">Captcha:<sup>*</sup></label><br>
+                <!--Inupt Visible Captch from Js-->
+                <input type="text" id="textInput" placeholder="Enter Captcha">
+                <!--Load Captch-->
+                <input class="capt" id="capt" readonly="readonly">
+                <!--Refresh-->
+                <span id="refresh"><i class="fa-solid fa-rotate" onclick="cap()"></i></span>
+                
+                <button type="submit" class="success">Book Now</button>
+            </form>
+        </div>
+        <!-- Add Firebase scripts -->
+        <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+        <script src="https://kit.fontawesome.com/a81980af38.js" crossorigin="anonymous"></script>
+        <script src="https://piyushkhandelia.github.io/Guest_House_Reservation_System/js/updateRooms.js"></script>
+        <script src="https://piyushkhandelia.github.io/Guest_House_Reservation_System/js/refresh_captcha.js"></script>
+        <script src="https://piyushkhandelia.github.io/Guest_House_Reservation_System/js/booking.js"></script>
+        <script src="https://piyushkhandelia.github.io/TRIAL200237/js/script.js"></script>
+    </body>
+</html>
